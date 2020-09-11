@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.js"></script>
+</head>
+<body>
+    <p> API: edictus
+        <br>
+        Query: getActos
+        <br>
+        Cli: Axios.js
+        <br>
+        Desc: Actos Judiciales
+        <br>
+        <input type="text" id="entry" placeholder="id_acto">
+        <button id="button" onclick="read_actos();">Ver Actos(POST)</button></p>
+
+    <script>
+      const button = document.getElementById('button') 
+      async function read_actos(){
+         
+      const entry = document.getElementById('entry').value;
+      console.log(entry);
+      var query = `{
+        getActos {
+                id_acto
+                acto
+            }
+        }`;
+
+        if(entry){
+            query = `{
+            getActos (id_acto: ${entry}){
+                    id_acto
+                    acto
+                }
+            }`;
+        }
+
+        console.log('Query', query);       
+
+        const obj = await axios({
+        url: 'https://edictus.herokuapp.com/graphql',
+        method: 'post',
+        headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        },
+        data: {
+            query: `${query}`
+        }
+        }).then((res) => {
+        //console.log(res.data)
+        items = [{
+                success: true, 
+                items: res.data.data.getActos, 
+                total:  res.data.data.getActos.length}
+                ];
+            console.log(items[0]);
+            return items[0];
+        });
+    }
+    //read_actos();
+    </script>
+</body>
+</html>

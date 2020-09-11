@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+    <p> API: edictus
+        <br>
+        Query: getActos
+        <br>
+        Cli: Fetch
+        <br>
+        Desc: Actos Judiciales
+        <br>
+        <input type="text" id="entry" placeholder="id_acto">
+        <button id="button">Ver Actos(POST)</button></p>
+
+
+<script>
+    $('button').click(function() {
+      event.preventDefault();
+
+      async function read_actos(){
+      var entry = $('#entry').val()
+      console.log(entry);
+      var query = `{
+        getActos {
+                id_acto
+                acto
+            }
+        }`;
+
+        if(entry){
+            query = `{
+            getActos (id_acto: ${entry}){
+                    id_acto
+                    acto
+                }
+            }`;
+        }
+
+    console.log('Query', query);
+
+    $.ajax({
+        method: "POST",
+        url: "https://edictus.herokuapp.com/graphql",
+        contentType: "application/json",
+        headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        },
+        data: JSON.stringify({
+        query
+        }) 
+    }).done(function(res) {
+            items = [{
+                success: true, 
+                items: res.data.getActos, 
+                total: res.data.getActos.length}
+                ];
+            console.log(items[0]);
+            return items[0];
+    }).fail(function() {
+        console.log("error");
+    });
+
+    }
+
+    read_actos();
+
+    });
+    
+    
+</script>
+</body>
+</html>
