@@ -5,6 +5,9 @@
 * react-app git repo: https://github.com/ravendano014/react-edictus 
 
 # Scenario
+![Edictus API](./Edictus_API.png)
+
+Source: 
 https://app.diagrams.net/#G1_1JWbN8oyYL2iyHKq0MIyyJqTWLIjWBo
 
 # BPMN 2.0
