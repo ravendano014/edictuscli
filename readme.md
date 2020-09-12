@@ -36,7 +36,7 @@ docker run -it -p 4000:3000 edictuscli
 
 - to run as a process
 
-docker run -d -p 4000:3000 edictus
+docker run -d -p 4000:3000 edictuscli
 
 - to view running docker process
 
