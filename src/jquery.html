@@ -27,6 +27,7 @@
         <input type="text" id="entry" placeholder="id_acto">
         <button id="button">Ver Actos(POST)</button></p>
         <hr>
+        <div id="loader" style="display: none"></div>
         <table class="table" >
             <thead class="thead-dark">
               <tr>
@@ -63,6 +64,9 @@
 
     console.log('Query', query);
 
+    const loader = document.querySelector('#loader');
+    loader.style.display = 'block';
+
     $.ajax({
         method: "POST",
         url: "https://edictus.herokuapp.com/graphql",
@@ -88,6 +92,8 @@
                 total: res.data.getActos.length}
                 ];
             console.log(items[0]);
+            loader.style.display = 'none';
+
             return items[0];
     }).fail(function() {
         console.log("error");

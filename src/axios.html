@@ -26,6 +26,7 @@
         <input type="text" id="entry" placeholder="id_acto">
         <button id="button" onclick="read_actos();">Ver Actos(POST)</button></p>
         <hr>
+        <div id="loader" style="display: none"></div>
         <table class="table" >
             <thead class="thead-dark">
               <tr>
@@ -59,7 +60,10 @@
             }`;
         }
 
-        console.log('Query', query);       
+        console.log('Query', query);
+              
+        const loader = document.querySelector('#loader');
+        loader.style.display = 'block';
 
         const obj = await axios({
         url: 'https://edictus.herokuapp.com/graphql',
@@ -86,6 +90,8 @@
                 total:  res.data.data.getActos.length}
                 ];
             console.log(items[0]);
+            loader.style.display = 'none';
+            
             return items[0];
         });
     }
