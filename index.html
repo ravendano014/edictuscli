@@ -122,7 +122,7 @@
     <footer id="contact">
       <div class="container">
         <div class="row">
-          <div class="col-md-5">
+          <div class="col-md-6">
             <form class="card mt-4" style="margin-left: 150px;">
               <div class="card-body">
                 Twitter
@@ -144,7 +144,40 @@
               </div>
             </form>
           </div>
+
+          <div class="col-md-6">
+            <form style="margin-left: 150px;">
+              <div>
+          <pre>
+            <code>
+              const serverUrl = 'https://edictus.herokuapp.com/graphql/'
+              const query = {
+                  query: `{
+                      getActos {
+                          acto
+                      }
+                  }`
+              };
+  
+  
+              const xhr = new XMLHttpRequest();
+              xhr.responseType = 'json';
+              xhr.open('POST', serverUrl);
+              xhr.setRequestHeader('Content-Type', 'application/json');
+              xhr.onload = function () {
+                  console.log('data returned:', xhr.response);
+              };
+  
+              xhr.send(JSON.stringify(query));
+            </code>
+          </pre>
+          </form>
+          </div>
         </div>
+
+
+        </div>
+
       </div>
     </footer>
 
