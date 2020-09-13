@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>edictus</title>
     <script
   src="https://code.jquery.com/jquery-3.5.1.js"
   integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
@@ -18,13 +18,25 @@
       <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-    <p> API: edictus
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="#">edictus API</a>
+</nav>
+<section id="testimonial">
+    <div class="container">
+            https://edictus.herokuapp.com/graphql
+    </div>
+</section>
+    
+<section>
+    <div class="container">
+        <div class="row">
+        <p> API: edictus
         <br>
         Query: getActos
         <br>
         Desc: Actos Judiciales
         <br>
-        <input type="text" id="entry" placeholder="id_acto">
+        <input type="number" id="entry" placeholder="id_acto">
         <button id="button">Ver Actos(POST)</button></p>
         <hr>
         <div id="loader" style="display: none"></div>
@@ -38,7 +50,9 @@
             <tbody id="tbody-table">
             </tbody>
         </table>
-
+        </div>
+    </div>
+</section>
 <script>
     $('button').click(function() {
       event.preventDefault();

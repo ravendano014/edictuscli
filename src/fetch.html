@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>edictus</title>
       <!-- GOOGLE FONT -->
       <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet" />
       <!-- BOOTSTRAP 4 -->
@@ -14,29 +14,43 @@
       <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-    <p> API: edictus
-        <br>
-        Query: getActos
-        <br>
-        Cli: Fetch
-        <br>
-        Desc: Actos Judiciales
-        <br>
-        <input type="text" id="entry" placeholder="id_acto">
-        <button id="button">Ver Actos(POST)</button></p>
-        <hr>
-        <div id="loader" style="display: none"></div>
-        <table class="table" >
-            <thead class="thead-dark">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Acto</th>
-            </tr>
-            </thead>
-            <tbody id="tbody-table">
-            </tbody>
-        </table>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="#">edictus API</a>
+</nav>
+<section id="testimonial">
+    <div class="container">
+        https://edictus.herokuapp.com/graphql
+    </div>
+</section>
 
+<section>
+    <div class="container">
+        <div class="row">
+        <p> API: edictus
+            <br>
+            Query: getActos
+            <br>
+            Cli: Fetch
+            <br>
+            Desc: Actos Judiciales
+            <br>
+            <input type="number" id="entry" placeholder="id_acto">
+            <button id="button">Ver Actos(POST)</button></p>
+            <hr>
+            <div id="loader" style="display: none"></div>
+            <table class="table" >
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Acto</th>
+                </tr>
+                </thead>
+                <tbody id="tbody-table">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
 <script>
       document.getElementById("button").addEventListener("click", function()  {
       event.preventDefault();
