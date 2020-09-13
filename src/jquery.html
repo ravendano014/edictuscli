@@ -26,7 +26,17 @@
         <br>
         <input type="text" id="entry" placeholder="id_acto">
         <button id="button">Ver Actos(POST)</button></p>
-
+        <hr>
+        <table class="table" >
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Acto</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-table">
+            </tbody>
+        </table>
 
 <script>
     $('button').click(function() {
@@ -65,6 +75,13 @@
         query
         }) 
     }).done(function(res) {
+        var $tbody = $('#tbody-table');
+
+        $tbody.empty();
+        $.each(res.data.getActos, function(key, row){ 
+            $tbody.append('<tr><td>'+row.id_acto+'</td><td>'+row.acto+'</td><tr>');
+        });    
+        
             items = [{
                 success: true, 
                 items: res.data.getActos, 

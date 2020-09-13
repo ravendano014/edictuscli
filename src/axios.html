@@ -25,6 +25,17 @@
         <br>
         <input type="text" id="entry" placeholder="id_acto">
         <button id="button" onclick="read_actos();">Ver Actos(POST)</button></p>
+        <hr>
+        <table class="table" >
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Acto</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-table">
+            </tbody>
+        </table>
 
     <script>
       const button = document.getElementById('button') 
@@ -61,7 +72,14 @@
             query: `${query}`
         }
         }).then((res) => {
-        //console.log(res.data)
+            var tbody = document.getElementById('tbody-table');
+            tbody.innerText='';
+            res.data.data.getActos.forEach(function(object) {
+            var tr = document.createElement('tr');
+            tr.innerHTML = '<td>' + object.id_acto + '</td>' +
+            '<td>' + object.acto + '</td>';
+            tbody.appendChild(tr);
+        });
         items = [{
                 success: true, 
                 items: res.data.data.getActos, 

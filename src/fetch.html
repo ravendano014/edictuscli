@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script
-  src="https://code.jquery.com/jquery-3.5.1.js"
-  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-  crossorigin="anonymous"></script>
       <!-- GOOGLE FONT -->
       <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet" />
       <!-- BOOTSTRAP 4 -->
@@ -28,14 +24,24 @@
         <br>
         <input type="text" id="entry" placeholder="id_acto">
         <button id="button">Ver Actos(POST)</button></p>
-
+        <hr>
+        <table class="table" >
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Acto</th>
+            </tr>
+            </thead>
+            <tbody id="tbody-table">
+            </tbody>
+        </table>
 
 <script>
-    $('button').click(function() {
+      document.getElementById("button").addEventListener("click", function()  {
       event.preventDefault();
 
       async function read_actos(){
-      var entry = $('#entry').val()
+      var entry = document.getElementById('entry').value;
       console.log(entry);
       var query = `{
         getActos {
@@ -55,18 +61,26 @@
 
     console.log('Query', query);
 
-    $.ajax({
-        method: "POST",
-        url: "https://edictus.herokuapp.com/graphql",
-        contentType: "application/json",
-        headers: {
+    const obj = await fetch('https://edictus.herokuapp.com/graphql', {
+    method: 'POST',
+    headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        },
-        data: JSON.stringify({
+    },
+    body: JSON.stringify({
         query
-        }) 
-    }).done(function(res) {
+    })
+    })
+    .then(r => r.json())
+    .then(function(res) {
+        var tbody = document.getElementById('tbody-table');
+        tbody.innerText='';
+        res.data.getActos.forEach(function(object) {
+            var tr = document.createElement('tr');
+            tr.innerHTML = '<td>' + object.id_acto + '</td>' +
+            '<td>' + object.acto + '</td>';
+            tbody.appendChild(tr);
+        });
             items = [{
                 success: true, 
                 items: res.data.getActos, 
@@ -74,10 +88,7 @@
                 ];
             console.log(items[0]);
             return items[0];
-    }).fail(function() {
-        console.log("error");
     });
-
     }
 
     read_actos();
