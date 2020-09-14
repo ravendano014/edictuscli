@@ -30,6 +30,21 @@
     </nav>
 
     <!-- SECTION -->
+
+    <section id="testimonial">
+      <div class="container">
+        <p class="h2 mb-2">
+          <h2>Planning</h2>
+          <br>
+          <a href="https://demo.bpmn.io/">BPMN (Analysis)</a>&nbsp;|&nbsp;<a href="https://raw.githubusercontent.com/ravendano014/edictuscli/master/diagram.bpmn">Bussiness Rules Diagram</a>
+          <br>
+          <a href="https://dbdiagram.io/d/5f587f1288d052352cb67c62">Database Diagram (Design)</a>
+          <br>
+          <a href="https://wireframe.cc/0Pu3NP">Wireframes (Design)</a>
+        </p>
+      </div>
+    </section>
+
     <section id="header">
       <div class="container mt-5">
         <div class="row">
@@ -40,13 +55,17 @@
           </div>
           <div class="col-md-6 col-sm-6">
             <div class="header-content-right">
-              <h1 class="display-4">Edictus API GraphQL</h1>
+              <h1 class="display-4">Edictus API REST & GraphQL</h1>
               <p class="mt-5">Simple, funcional.</p>
               <a href="src/axios.html" class="btn btn-outline-secondary header-btn btn-lg mt-2">Test con AXIOS</a>
               <br>
               <a href="src/fetch.html" class="btn btn-outline-secondary header-btn btn-lg mt-2">Test con Fetch</a>
               <br>
               <a href="src/jquery.html" class="btn btn-outline-secondary header-btn btn-lg mt-2">Test con JQuery</a>
+              <br>
+              <a href="https://www.postman.com/downloads/" class="btn btn-outline-secondary header-btn btn-lg mt-2">PostMan</a>
+              <br>
+              <a href="https://insomnia.rest/download/" class="btn btn-outline-secondary header-btn btn-lg mt-2">Insomnia</a>
             </div>
           </div>
         </div>
@@ -72,6 +91,17 @@
           </div>
           <div class="col-md-6 my-auto">
             <div class="info-right">
+              <h2>RESTful</h2>
+              <pre><code>
+                // GET
+                https://edictus.herokuapp.com/actos 
+                https://edictus.herokuapp.com/actos/1
+                // PUT
+                //Headers: "Content-Type": "application/json"
+                //Body: Raw: {"acto": "My new string value"}
+                https://edictus.herokuapp.com/actos/1
+
+              </code></pre>
               <h2>GraphQL.</h2>
               <p>Evolucionando la web. <a href="https://graphql.org/">GraphQL</a></p>
               <a href="https://edictus.herokuapp.com/graphql" class="btn btn-outline-secondary btn-lg">Test con GraphQL</a>
@@ -119,6 +149,20 @@
       </div>
     </section>
 
+    <section id="testimonial">
+      <div class="container">
+        <p class="h2 mb-2">
+          <h2>Roy Fielding</h2>
+          <br>
+          <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">REST Origin</a>
+          <br>
+          <a href="https://www.coursera.org/lecture/python-network-data/interview-roy-fielding-understanding-the-rest-architecture-Aj3zX">Interview</a>
+          <br>
+          <a href="https://docs.microsoft.com/es-es/azure/architecture/best-practices/api-design">Best practices</a>
+        </p>
+      </div>
+    </section>
+
     <footer id="contact">
       <div class="container">
         <div class="row">
@@ -126,11 +170,11 @@
             <form class="card mt-4" style="margin-left: 150px;">
               <div class="card-body">
                 Twitter
-                <button class="btn btn-outline-secondary btn-block">
+                <button class="btn btn-outline-secondary btn-block" onclick="location.href='https://twitter.com/ronald_avendano?lang=es'">
                  @ronald_avendano
                 </button>
                 email
-                <button class="btn btn-outline-secondary btn-block">
+                <button class="btn btn-outline-secondary btn-block" onclick="mailto:ronald.avendano@oj.gob.sv">
                   ronald.avendano@oj.gob.sv
                 </button>
                 github
@@ -138,8 +182,8 @@
                   https://github.com/ravendano014
                 </button>
                 LinkedIn
-                <button>
-                  https://sv.linkedin.com/in/ronald-avenda%C3%B1o-7313a510
+                <button class="btn btn-outline-secondary btn-block" onclick="location.href='https://sv.linkedin.com/in/ronald-avenda%C3%B1o-7313a510'">
+                  Independent Professional 
                 </button>
               </div>
             </form>
@@ -231,4 +275,3 @@
     </script>
   </body>
 </html>
-
