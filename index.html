@@ -227,44 +227,44 @@
 
     <section id="testimonial">
       <div class="container">
+        <div style="text-align: justify;">
         <pre>
           <code>
         <p class="h2">
-          <h2>Docker</h2>
+          <h2><img src="docker-logo.png" style="width: 25%;"></h2>
           <br>
           - first, make sure docker is running
-          <br>
-          docker build -t edictuscli
-          <br>
-          .... this build will generates an id for this image 
+          (.... this build will generates an id for this image )
+          <span style="color:darkcyan">docker build -t edictuscli</span>
           <br>
           - to check my images
           <br>
-          docker images
+          <span style="color:darkcyan">docker images</span>
           <br>
           - to run as an image of docker (container) as interactive mode
           ( -p to run in port 4000 otherwise so will use 3000)
           <br>
-          docker run -it -p 4000:3000 edictuscli
+          <span style="color:darkcyan">docker run -it -p 4000:3000 edictuscli</span>
           <br>
           - to run as a process
           <br>
-          docker run -d -p 4000:3000 edictuscli
+          <span style="color:darkcyan">docker run -d -p 4000:3000 edictuscli</span>
           <br>
           - to view running docker process
           <br>
-          docker ps
+          <span style="color:darkcyan">docker ps</span>
           <br>
           - to stop the process
           ( ... this command requires the process id, you can use the first three characters of the process to stop it)
-          process name sample 123jfkdjfkldjfk
+          (process name sample 123jfkdjfkldjfk)
           <br>
-          docker stop 123
+          <span style="color:darkcyan">docker stop 123</span>
           <br>
           ... this will stop the process with the name 123jfkdjfkldjfk
         </code>
       </pre>
         </p>
+      </div>
       </div>
     </section>
 
