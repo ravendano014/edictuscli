@@ -225,6 +225,52 @@
       </div>
     </footer>
 
+    <section id="testimonial">
+      <div class="container">
+        <pre>
+          <code>
+        <p class="h2">
+          <h2>Docker</h2>
+          <br>
+          - first, make sure docker is running
+          <br>
+          docker build -t edictuscli
+          <br>
+          .... this build will generates an id for this image 
+          <br>
+          - to check my images
+          <br>
+          docker images
+          <br>
+          - to run as an image of docker (container) as interactive mode
+          ( -p to run in port 4000 otherwise so will use 3000)
+          <br>
+          docker run -it -p 4000:3000 edictuscli
+          <br>
+          - to run as a process
+          <br>
+          docker run -d -p 4000:3000 edictuscli
+          <br>
+          - to view running docker process
+          <br>
+          docker ps
+          <br>
+          - to stop the process
+          ( ... this command requires the process id, you can use the first three characters of the process to stop it)
+          process name sample 123jfkdjfkldjfk
+          <br>
+          docker stop 123
+          <br>
+          ... this will stop the process with the name 123jfkdjfkldjfk
+        </code>
+      </pre>
+        </p>
+      </div>
+    </section>
+
+
+
+
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
