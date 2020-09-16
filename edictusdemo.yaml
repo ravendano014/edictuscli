@@ -1,0 +1,36 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: 123jfkdjfkldjfk
+  labels:
+    gx: "28"
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      gx: "28"
+  template:
+    metadata:
+      labels:
+        gx: "28"
+    spec:
+      containers:
+      - name: edictusdemo
+        image: edictus/123jfkdjfkldjfk:v1
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: edictusdemo-service
+  labels:
+    gx: "28"
+spec:
+  selector:
+    gx: "28"
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
