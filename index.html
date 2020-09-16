@@ -531,6 +531,10 @@
     <section id="testimonial">
       <div class="container">
         <p class="h2 mb-2">
+          “Si automatizas un procedimiento desastroso, obtienes un procedimiento desastroso automatizado”   
+        </p>
+        <p class="h4"><a href="#">Rod Michael</a></p>
+        <p class="h2 mb-2">
           <h2>Roy Fielding</h2>
           <br>
           <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">REST Origin</a>
@@ -605,6 +609,10 @@
     </footer>
 
     <section id="testimonial">
+      <p class="h2 mb-2">
+        “Siempre llega una nueva herramienta. La tecnología es neutral, depende de cómo se use”   
+      </p>
+      <p class="h4"><a href="#">Rick Smolan</a></p>
       <div class="container">
         <div style="text-align: justify;">
         <pre>
@@ -638,6 +646,31 @@
         </code>
       </pre>
         </p>
+        <pre>
+          <code>
+        <p class="h2">
+          <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="kubernetes-logo.png" style="width: 15%;"></h2>
+          <br>
+          So to start the application run the following command
+
+          <span style="color:darkcyan">kubectl apply -f edictusdemo.yaml</span>
+          (that's assuming you're located in the same foldr the yaml file is)
+          
+          This is the output you should get:
+          <span style="color:darkcyan">
+          > deployment.extensions "edictusdemo" created  
+          > service "edictusdemo-service" created</span>
+          Now we need to check what port was assigned to our application by Kubernetes. In order to do that we'll to get info about the created service.
+          
+          <span style="color:darkcyan">kubectl get service edictusdemo-service</span>
+          This is the output I got, so in my case, the assigned port is 30361, it'll most certainly be different in your case.
+          <span style="color:darkcyan">
+          NAME                  TYPE       CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+          edictusdemo-service   NodePort   10.107.133.248   <none>        80:30361/TCP   2m
+          </span>  
+        </p>
+        </code>
+      </pre>
       </div>
       </div>
     </section>
