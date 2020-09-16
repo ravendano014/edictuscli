@@ -494,8 +494,23 @@
       <div class="container">
         <div class="row my-5">
           <div class="col-md-6">
+            <h2>API REST</h2>
+            <table width="100%" border="0" class="table">
+              <thead>
+                <th>
+                    <td>EndPoint</td>
+                    <td>get</td>
+                    <td>post</td>
+                    <td>put</td>
+                    <td>delete</td>
+                </th>
+              </thead>
+              <tbody>
+                <tr><td>Actos</td><td>/actos</td><td>/actos or /actos:1</td><td>/actos</td><td>/actos:1</td><td>/actos:1</td></tr>
+              </tbody>
+            </table>
             <h2>Acerca de</h2>
-            <p align="justify">En primera instancia, cuando hablamos de construir un servicio web basado en APIs se siguen estos enfoques:
+            <p align="justify"><b>Un paso hacia adelante con Arquitectura Orientada a Servicios (SOA) y el rompimiento del monolito con microservicios, aplicaciones web ejecutadas en contenedores y gestionadas con orquestadores.</b> Cuando hablamos de construir un servicio web basado en APIs se siguen estos enfoques:
  
               Ocupar un lugar en nuestro servidor para recibir peticiones HTTP por parte de cualquier cliente (web, mobile…).
               Exponer puntos de entrada para consultar o enviar datos. Tanto el caso de un API REST y GraphQL usan estos conceptos relacionados construyendo así un servicio web donde en ambos escenarios se ve influenciado en cómo nuestro cliente realiza consultas o qué es lo que necesita de este servicio.
@@ -509,6 +524,21 @@
               </p>
           </div>
           <div class="col-md-6">
+            <h2>GraphQL</h2>
+            <table width="100%" border="0" class="table">
+              <thead>
+                <th>
+                    <td>EndPoint</td>
+                    <td>get</td>
+                    <td>post</td>
+                    <td>put</td>
+                    <td>delete</td>
+                </th>
+              </thead>
+              <tbody>
+                <tr><td>Actos</td><td>/graphql</td><td>{getActos}</td><td>mutation {addActo(input: {acto: "Acto"})}</td><td>mutation{updActo(id_acto: 1){input: {acto: "Acto"}}}</td><td>mutation{ delActo(id_acto: 1)}</td></tr>
+              </tbody>
+            </table>
             <h2>Diferencias</h2>
             <p align="justify">La diferencia principal y más importante es que GraphQL no está tratando con recursos dedicados. Es más, todos los recursos se consideran más bien en su totalidad un conjunto de grafos conectados entre sí. Esto da lugar a que puedes adaptar tu consulta a las necesidades del cliente utilizando el lenguaje de consulta de GraphQL (basado en Schemas) describiendo lo que le gustaría tener como respuesta, así como combinar diferentes entidades (o tipos) en una consulta y qué atributos deben incluirse en la respuesta de cada nivel.
             <ul>
