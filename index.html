@@ -103,6 +103,8 @@
           <a href="https://wireframe.cc/0Pu3NP">Wireframes (Design)</a>
           <br>
           <a href="https://www.ibm.com/es-es/cloud/api-connect">API Connect (IBM)</a>
+          <br>
+          <a href="Las organizaciones dedicadas al diseño de sistemas … están abocadas a producir diseños que son copias de las estructuras de comunicación de dichas organizaciones - Ley de Conway"></a>
         </p>
       </div>
     </section>
@@ -311,6 +313,12 @@
             elementRegistry = viewer.get('elementRegistry'),
             modeling = viewer.get('modeling');
 
+        var nEdictos_Step1 = 0;
+        var nEdictos_Step2 = 0;
+        var nEdictos_Step3 = 0;
+        var nEdictos_Step4 = 0;
+        var nEdictos_Step5 = 0;
+
         // Option 1: Color via Overlay
         var shape = elementRegistry.get('Event_0rlo0m8');
         var shape2 = elementRegistry.get('Activity_0uro3eo');
@@ -320,38 +328,38 @@
         var shape6 = elementRegistry.get('Activity_17xedsd');
 
 
-        var $overlayHtml = $('<div class="highlight-overlay"><span class="badge bg-blue fg-white"><?php echo $nEdictos_Step6;  ?></span>')
+        var $overlayHtml = $('<div class="highlight-overlay"><span class="badge badge-light">1</span>') //'+nEdictos_Step6+'
                                 .css({
                                   width: shape.width,
                                   height: shape.height
                                 });
 
-        var $overlayHtml2 = $('<div class="highlight-overlay"><span class="badge bg-red fg-white"><?php echo $nEdictos_Step3;  ?></span>')
+        var $overlayHtml2 = $('<div class="highlight-overlay"><span class="badge badge-light">4</span>') //'+nEdictos_Step3+'
                                 .css({
                                   width: shape2.width,
                                   height: shape2.height
                                 });
 
 
-        var $overlayHtml3 = $('<div class="highlight-overlay"><span class="badge bg-red fg-white"><?php print_r($nEdictos_Step2); ?></span>')
+        var $overlayHtml3 = $('<div class="highlight-overlay"><span class="badge badge-light">4</span>') //'+nEdictos_Step2+'
                                 .css({
                                   width: shape3.width,
                                   height: shape3.height
                                 });
 
-        var $overlayHtml4 = $('<div class="highlight-overlay"><span class="badge bg-orange fg-white"><?php echo $nEdictos_Step1;  ?></span>')
+        var $overlayHtml4 = $('<div class="highlight-overlay"><span class="badge badge-light">4</span>') //'+nEdictos_Step1+'
                                 .css({
                                   width: shape4.width,
                                   height: shape4.height
                                 });
 
-        var $overlayHtml5 = $('<div class="highlight-overlay"><span class="badge bg-green fg-white"><?php echo ($nEdictos_Step1+$nEdictos_Step2+$nEdictos_Step3+$nEdictos_Step4+$nEdictos_Step5+$nEdictos_Step6);  ?></span>')
+        var $overlayHtml5 = $('<div class="highlight-overlay"><span class="badge badge-light">4</span>') // '+(nEdictos_Step1+nEdictos_Step2+nEdictos_Step3+nEdictos_Step4+nEdictos_Step5+nEdictos_Step6)+'
                                 .css({
                                   width: shape5.width,
                                   height: shape5.height
                                 });
 
-        var $overlayHtml6 = $('<div class="highlight-overlay"><span class="badge bg-red fg-white"><?php echo $nEdictos_Step5;  ?></span>')
+        var $overlayHtml6 = $('<div class="highlight-overlay"><span class="badge badge-light">4</span>') // '+nEdictos_Step5+'
                                 .css({
                                   width: shape6.width,
                                   height: shape6.height
