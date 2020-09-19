@@ -1,0 +1,1620 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>JavaScript JSONPath for edictus API</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="https://www.w3resource.com/JSON/json.js"></script>
+<script type="text/javascript" src="https://www.w3resource.com/JSON/jsonpath.js"></script>
+</head>
+<body>
+<h1>JavaScript with JSONPath</h1>
+<ul>
+  <li>All items only fields id_municipio, municipio - "$.edictusDatabase.municipio[*]['id_municipio','municipio']"</li>
+  <li>Only municipio with poblacion more than 50,000  - "$..municipio[?(@.poblacion>50000)].municipio"</li>
+  <li>Last item - "$..municipio[(@.length-1)]"</li>
+  <li>Only municipio, poblacion of departamento 06 - "$..municipio[?(@.id_departamento=='06')]['municipio','poblacion']"</li>
+  <li>Only poblacion - "$.edictusDatabase..poblacion"</li>
+</ul>
+<script type="text/javascript">
+var json = { "edictusDatabase": {
+    "municipio":  [
+      {
+        "id_municipio": 101,
+        "municipio": "AHUACHAPAN",
+        "poblacion": 110511,
+        "id_departamento": "01"
+      },
+      {
+        "id_municipio": 102,
+        "municipio": "APANECA",
+        "poblacion": 8383,
+        "id_departamento": "01"
+      },
+      {
+        "id_municipio": 103,
+        "municipio": "ATIQUIZAYA",
+        "poblacion": 33587,
+        "id_departamento": "01"
+      },
+      {
+        "id_municipio": 104,
+        "municipio": "CONCEPCION DE ATACO",
+        "poblacion": 12786,
+        "id_departamento": "01"
+      },
+      {
+        "id_municipio": 105,
+        "municipio": "EL REFUGIO",
+        "poblacion": 8171,
+        "id_departamento": "01"
+      },
+      {
+        "id_municipio": 106,
+        "municipio": "GUAYMANGO",
+        "poblacion": 19037,
+        "id_departamento": "01"
+      },
+      {
+        "id_municipio": 107,
+        "municipio": "JUJUTLA",
+        "poblacion": 28559,
+        "id_departamento": "01"
+      },
+      {
+        "id_municipio": 108,
+        "municipio": "SAN FRANCISCO MENENDEZ",
+        "poblacion": 42607,
+        "id_departamento": "01"
+      },
+      {
+        "id_municipio": 109,
+        "municipio": "SAN LORENZO",
+        "poblacion": 9194,
+        "id_departamento": "01"
+      },
+      {
+        "id_municipio": 110,
+        "municipio": "SAN PEDRO PUXTLA",
+        "poblacion": 7773,
+        "id_departamento": "01"
+      },
+      {
+        "id_municipio": 111,
+        "municipio": "TACUBA",
+        "poblacion": 29858,
+        "id_departamento": "01"
+      },
+      {
+        "id_municipio": 112,
+        "municipio": "TURIN",
+        "poblacion": 8997,
+        "id_departamento": "01"
+      },
+      {
+        "id_municipio": 201,
+        "municipio": "CANDELARIA DE LA FRONTERA",
+        "poblacion": 22686,
+        "id_departamento": "02"
+      },
+      {
+        "id_municipio": 202,
+        "municipio": "COATEPEQUE",
+        "poblacion": 74038,
+        "id_departamento": "02"
+      },
+      {
+        "id_municipio": 203,
+        "municipio": "CHALCHUAPA",
+        "poblacion": 36768,
+        "id_departamento": "02"
+      },
+      {
+        "id_municipio": 204,
+        "municipio": "EL CONGO",
+        "poblacion": 24219,
+        "id_departamento": "02"
+      },
+      {
+        "id_municipio": 205,
+        "municipio": "EL PORVENIR",
+        "poblacion": 8232,
+        "id_departamento": "02"
+      },
+      {
+        "id_municipio": 206,
+        "municipio": "MASAHUAT",
+        "poblacion": 3393,
+        "id_departamento": "02"
+      },
+      {
+        "id_municipio": 207,
+        "municipio": "METAPAN",
+        "poblacion": 59004,
+        "id_departamento": "02"
+      },
+      {
+        "id_municipio": 208,
+        "municipio": "SAN ANTONIO PAJONAL",
+        "poblacion": 3279,
+        "id_departamento": "02"
+      },
+      {
+        "id_municipio": 209,
+        "municipio": "SAN SEBASTIAN SALITRILLO",
+        "poblacion": 18566,
+        "id_departamento": "02"
+      },
+      {
+        "id_municipio": 210,
+        "municipio": "SANTA ANA",
+        "poblacion": 245421,
+        "id_departamento": "02"
+      },
+      {
+        "id_municipio": 211,
+        "municipio": "SANTA ROSA GUACHIPILIN",
+        "poblacion": 4930,
+        "id_departamento": "02"
+      },
+      {
+        "id_municipio": 212,
+        "municipio": "SANTIAGO DE LA FRONTERA",
+        "poblacion": 5196,
+        "id_departamento": "02"
+      },
+      {
+        "id_municipio": 213,
+        "municipio": "TEXISTEPEQUE",
+        "poblacion": 17923,
+        "id_departamento": "02"
+      },
+      {
+        "id_municipio": 301,
+        "municipio": "ACAJUTLA",
+        "poblacion": 52359,
+        "id_departamento": "03"
+      },
+      {
+        "id_municipio": 302,
+        "municipio": "ARMENIA",
+        "poblacion": 34912,
+        "id_departamento": "03"
+      },
+      {
+        "id_municipio": 303,
+        "municipio": "CALUCO",
+        "poblacion": 9139,
+        "id_departamento": "03"
+      },
+      {
+        "id_municipio": 304,
+        "municipio": "CUISNAHUAT",
+        "poblacion": 12676,
+        "id_departamento": "03"
+      },
+      {
+        "id_municipio": 305,
+        "municipio": "SANTA ISABEL ISHUATAN",
+        "poblacion": 10241,
+        "id_departamento": "03"
+      },
+      {
+        "id_municipio": 306,
+        "municipio": "IZALCO",
+        "poblacion": 70959,
+        "id_departamento": "03"
+      },
+      {
+        "id_municipio": 307,
+        "municipio": "JUAYUA",
+        "poblacion": 24465,
+        "id_departamento": "03"
+      },
+      {
+        "id_municipio": 308,
+        "municipio": "NAHUIZALCO",
+        "poblacion": 49081,
+        "id_departamento": "03"
+      },
+      {
+        "id_municipio": 309,
+        "municipio": "NAHUILINGO",
+        "poblacion": 10417,
+        "id_departamento": "03"
+      },
+      {
+        "id_municipio": 310,
+        "municipio": "SALCOATITAN",
+        "poblacion": 5484,
+        "id_departamento": "03"
+      },
+      {
+        "id_municipio": 311,
+        "municipio": "SAN ANTONIO DEL MONTE",
+        "poblacion": 26902,
+        "id_departamento": "03"
+      },
+      {
+        "id_municipio": 312,
+        "municipio": "SAN JULIAN",
+        "poblacion": 18648,
+        "id_departamento": "03"
+      },
+      {
+        "id_municipio": 313,
+        "municipio": "SANTA CATARINA MASAHUAT",
+        "poblacion": 10076,
+        "id_departamento": "03"
+      },
+      {
+        "id_municipio": 314,
+        "municipio": "SANTO DOMINGO DE GUZMAN",
+        "poblacion": 7055,
+        "id_departamento": "03"
+      },
+      {
+        "id_municipio": 315,
+        "municipio": "SONSONATE",
+        "poblacion": 71541,
+        "id_departamento": "03"
+      },
+      {
+        "id_municipio": 316,
+        "municipio": "SONZACATE",
+        "poblacion": 25005,
+        "id_departamento": "03"
+      },
+      {
+        "id_municipio": 401,
+        "municipio": "AGUA CALIENTE",
+        "poblacion": 8261,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 402,
+        "municipio": "ARCATAO",
+        "poblacion": 2946,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 403,
+        "municipio": "AZACUALPA",
+        "poblacion": 1136,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 404,
+        "municipio": "CITALA",
+        "poblacion": 4164,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 405,
+        "municipio": "COMALAPA",
+        "poblacion": 2996,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 406,
+        "municipio": "CONCEPCION QUEZALTEPEQUE",
+        "poblacion": 6457,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 407,
+        "municipio": "CHALATENANGO",
+        "poblacion": 29271,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 408,
+        "municipio": "DULCE NOMBRE DE MARIA",
+        "poblacion": 5051,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 409,
+        "municipio": "EL CARRIZAL",
+        "poblacion": 2464,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 410,
+        "municipio": "EL PARAISO",
+        "poblacion": 10483,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 411,
+        "municipio": "LA LAGUNA",
+        "poblacion": 3923,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 412,
+        "municipio": "LA PALMA",
+        "poblacion": 12235,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 413,
+        "municipio": "LA REINA",
+        "poblacion": 9525,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 414,
+        "municipio": "LAS VUELTAS",
+        "poblacion": 940,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 415,
+        "municipio": "NOMBRE DE JESUS",
+        "poblacion": 4484,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 416,
+        "municipio": "NUEVA CONCEPCION",
+        "poblacion": 28625,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 417,
+        "municipio": "NUEVA TRINIDAD",
+        "poblacion": 1673,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 418,
+        "municipio": "OJOS DE AGUA",
+        "poblacion": 3667,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 419,
+        "municipio": "POTONICO",
+        "poblacion": 1586,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 420,
+        "municipio": "SAN ANTONIO DE LA CRUZ",
+        "poblacion": 1854,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 421,
+        "municipio": "SAN ANTONIO DE LOS RANCHOS",
+        "poblacion": 1619,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 422,
+        "municipio": "SAN FERNANDO",
+        "poblacion": 2593,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 423,
+        "municipio": "SAN FRANCISCO LEMPA",
+        "poblacion": 862,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 424,
+        "municipio": "SAN FRANCISCO MORAZAN",
+        "poblacion": 3919,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 425,
+        "municipio": "SAN IGNACIO",
+        "poblacion": 8611,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 426,
+        "municipio": "SAN ISIDRO LABRADOR",
+        "poblacion": 2592,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 427,
+        "municipio": "SAN JOSE CANCASQUE",
+        "poblacion": 1751,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 428,
+        "municipio": "SAN JOSE LAS FLORES",
+        "poblacion": 1583,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 429,
+        "municipio": "SAN LUIS DEL CARMEN",
+        "poblacion": 1173,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 430,
+        "municipio": "SAN MIGUEL DE MERCEDES",
+        "poblacion": 2487,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 431,
+        "municipio": "SAN RAFAEL",
+        "poblacion": 4264,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 432,
+        "municipio": "SANTA RITA",
+        "poblacion": 5985,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 433,
+        "municipio": "TEJUTLA",
+        "poblacion": 13608,
+        "id_departamento": "04"
+      },
+      {
+        "id_municipio": 501,
+        "municipio": "ANTIGUO CUSCATLAN",
+        "poblacion": 33698,
+        "id_departamento": "05"
+      },
+      {
+        "id_municipio": 502,
+        "municipio": "CIUDAD ARCE",
+        "poblacion": 60314,
+        "id_departamento": "05"
+      },
+      {
+        "id_municipio": 503,
+        "municipio": "COLON",
+        "poblacion": 96989,
+        "id_departamento": "05"
+      },
+      {
+        "id_municipio": 504,
+        "municipio": "COMASAGUA",
+        "poblacion": 11870,
+        "id_departamento": "05"
+      },
+      {
+        "id_municipio": 505,
+        "municipio": "CHILTIUPAN",
+        "poblacion": 10897,
+        "id_departamento": "05"
+      },
+      {
+        "id_municipio": 506,
+        "municipio": "HUIZUCAR",
+        "poblacion": 14465,
+        "id_departamento": "05"
+      },
+      {
+        "id_municipio": 507,
+        "municipio": "JAYAQUE",
+        "poblacion": 11058,
+        "id_departamento": "05"
+      },
+      {
+        "id_municipio": 508,
+        "municipio": "JICALAPA",
+        "poblacion": 5116,
+        "id_departamento": "05"
+      },
+      {
+        "id_municipio": 509,
+        "municipio": "LA LIBERTAD",
+        "poblacion": 35997,
+        "id_departamento": "05"
+      },
+      {
+        "id_municipio": 510,
+        "municipio": "NUEVO CUSCATLAN",
+        "poblacion": 6897,
+        "id_departamento": "05"
+      },
+      {
+        "id_municipio": 511,
+        "municipio": "SANTA TECLA",
+        "poblacion": 121908,
+        "id_departamento": "05"
+      },
+      {
+        "id_municipio": 512,
+        "municipio": "QUEZALTEPEQUE",
+        "poblacion": 52643,
+        "id_departamento": "05"
+      },
+      {
+        "id_municipio": 513,
+        "municipio": "SACACOYO",
+        "poblacion": 12299,
+        "id_departamento": "05"
+      },
+      {
+        "id_municipio": 514,
+        "municipio": "SAN JOSE VILLANUEVA",
+        "poblacion": 13576,
+        "id_departamento": "05"
+      },
+      {
+        "id_municipio": 515,
+        "municipio": "SAN JUAN OPICO",
+        "poblacion": 74280,
+        "id_departamento": "05"
+      },
+      {
+        "id_municipio": 516,
+        "municipio": "SAN MATIAS",
+        "poblacion": 7314,
+        "id_departamento": "05"
+      },
+      {
+        "id_municipio": 517,
+        "municipio": "SAN PABLO TACACHICO",
+        "poblacion": 20366,
+        "id_departamento": "05"
+      },
+      {
+        "id_municipio": 518,
+        "municipio": "TAMANIQUE",
+        "poblacion": 13544,
+        "id_departamento": "05"
+      },
+      {
+        "id_municipio": 519,
+        "municipio": "TALNIQUE",
+        "poblacion": 8264,
+        "id_departamento": "05"
+      },
+      {
+        "id_municipio": 520,
+        "municipio": "TEOTEPEQUE",
+        "poblacion": 12320,
+        "id_departamento": "05"
+      },
+      {
+        "id_municipio": 521,
+        "municipio": "TEPECOYO",
+        "poblacion": 14322,
+        "id_departamento": "05"
+      },
+      {
+        "id_municipio": 522,
+        "municipio": "ZARAGOZA",
+        "poblacion": 22525,
+        "id_departamento": "05"
+      },
+      {
+        "id_municipio": 601,
+        "municipio": "AGUILARES",
+        "poblacion": 21267,
+        "id_departamento": "06"
+      },
+      {
+        "id_municipio": 602,
+        "municipio": "APOPA",
+        "poblacion": 131286,
+        "id_departamento": "06"
+      },
+      {
+        "id_municipio": 603,
+        "municipio": "AYUTUXTEPEQUE",
+        "poblacion": 34710,
+        "id_departamento": "06"
+      },
+      {
+        "id_municipio": 604,
+        "municipio": "CUSCATANCINGO",
+        "poblacion": 66400,
+        "id_departamento": "06"
+      },
+      {
+        "id_municipio": 605,
+        "municipio": "EL PAISNAL",
+        "poblacion": 14511,
+        "id_departamento": "06"
+      },
+      {
+        "id_municipio": 606,
+        "municipio": "GUAZAPA",
+        "poblacion": 22906,
+        "id_departamento": "06"
+      },
+      {
+        "id_municipio": 607,
+        "municipio": "ILOPANGO",
+        "poblacion": 103862,
+        "id_departamento": "06"
+      },
+      {
+        "id_municipio": 608,
+        "municipio": "MEJICANOS",
+        "poblacion": 140751,
+        "id_departamento": "06"
+      },
+      {
+        "id_municipio": 609,
+        "municipio": "NEJAPA",
+        "poblacion": 29458,
+        "id_departamento": "06"
+      },
+      {
+        "id_municipio": 610,
+        "municipio": "PANCHIMALCO",
+        "poblacion": 41260,
+        "id_departamento": "06"
+      },
+      {
+        "id_municipio": 611,
+        "municipio": "ROSARIO DE MORA",
+        "poblacion": 11377,
+        "id_departamento": "06"
+      },
+      {
+        "id_municipio": 612,
+        "municipio": "SAN MARCOS",
+        "poblacion": 63209,
+        "id_departamento": "06"
+      },
+      {
+        "id_municipio": 613,
+        "municipio": "SAN MARTIN",
+        "poblacion": 72758,
+        "id_departamento": "06"
+      },
+      {
+        "id_municipio": 614,
+        "municipio": "SAN SALVADOR",
+        "poblacion": 316090,
+        "id_departamento": "06"
+      },
+      {
+        "id_municipio": 615,
+        "municipio": "SANTIAGO TEXACUANGOS",
+        "poblacion": 19428,
+        "id_departamento": "06"
+      },
+      {
+        "id_municipio": 616,
+        "municipio": "SANTO TOMAS",
+        "poblacion": 25344,
+        "id_departamento": "06"
+      },
+      {
+        "id_municipio": 617,
+        "municipio": "SOYAPANGO",
+        "poblacion": 241403,
+        "id_departamento": "06"
+      },
+      {
+        "id_municipio": 618,
+        "municipio": "TONACATEPEQUE",
+        "poblacion": 90896,
+        "id_departamento": "06"
+      },
+      {
+        "id_municipio": 619,
+        "municipio": "CIUDAD DELGADO",
+        "poblacion": 120200,
+        "id_departamento": "06"
+      },
+      {
+        "id_municipio": 701,
+        "municipio": "CANDELARIA",
+        "poblacion": 10090,
+        "id_departamento": "07"
+      },
+      {
+        "id_municipio": 702,
+        "municipio": "COJUTEPEQUE",
+        "poblacion": 50315,
+        "id_departamento": "07"
+      },
+      {
+        "id_municipio": 703,
+        "municipio": "EL CARMEN",
+        "poblacion": 13345,
+        "id_departamento": "07"
+      },
+      {
+        "id_municipio": 704,
+        "municipio": "EL ROSARIO",
+        "poblacion": 4220,
+        "id_departamento": "07"
+      },
+      {
+        "id_municipio": 705,
+        "municipio": "MONTE SAN JUAN",
+        "poblacion": 10224,
+        "id_departamento": "07"
+      },
+      {
+        "id_municipio": 706,
+        "municipio": "ORATORIO DE CONCEPCION",
+        "poblacion": 3578,
+        "id_departamento": "07"
+      },
+      {
+        "id_municipio": 707,
+        "municipio": "SAN BARTOLOME PERULAPIA",
+        "poblacion": 8058,
+        "id_departamento": "07"
+      },
+      {
+        "id_municipio": 708,
+        "municipio": "SAN CRISTOBAL",
+        "poblacion": 8316,
+        "id_departamento": "07"
+      },
+      {
+        "id_municipio": 709,
+        "municipio": "SAN JOSE GUAYABAL",
+        "poblacion": 9300,
+        "id_departamento": "07"
+      },
+      {
+        "id_municipio": 710,
+        "municipio": "SAN PEDRO PERULAPAN",
+        "poblacion": 44730,
+        "id_departamento": "07"
+      },
+      {
+        "id_municipio": 711,
+        "municipio": "SAN RAFAEL CEDROS",
+        "poblacion": 17069,
+        "id_departamento": "07"
+      },
+      {
+        "id_municipio": 712,
+        "municipio": "SAN RAMON",
+        "poblacion": 6292,
+        "id_departamento": "07"
+      },
+      {
+        "id_municipio": 713,
+        "municipio": "SANTA CRUZ ANALQUITO",
+        "poblacion": 2585,
+        "id_departamento": "07"
+      },
+      {
+        "id_municipio": 714,
+        "municipio": "SANTA CRUZ MICHAPA",
+        "poblacion": 11790,
+        "id_departamento": "07"
+      },
+      {
+        "id_municipio": 715,
+        "municipio": "SUCHITOTO",
+        "poblacion": 24786,
+        "id_departamento": "07"
+      },
+      {
+        "id_municipio": 716,
+        "municipio": "TENANCINGO",
+        "poblacion": 6782,
+        "id_departamento": "07"
+      },
+      {
+        "id_municipio": 801,
+        "municipio": "CUYULTITAN",
+        "poblacion": 5590,
+        "id_departamento": "08"
+      },
+      {
+        "id_municipio": 802,
+        "municipio": "EL ROSARIO",
+        "poblacion": 16784,
+        "id_departamento": "08"
+      },
+      {
+        "id_municipio": 803,
+        "municipio": "JERUSALEN",
+        "poblacion": 2570,
+        "id_departamento": "08"
+      },
+      {
+        "id_municipio": 804,
+        "municipio": "MERCEDES LA CEIBA",
+        "poblacion": 637,
+        "id_departamento": "08"
+      },
+      {
+        "id_municipio": 805,
+        "municipio": "OLOCUILTA",
+        "poblacion": 29529,
+        "id_departamento": "08"
+      },
+      {
+        "id_municipio": 806,
+        "municipio": "PARAISO DE OSORIO",
+        "poblacion": 2727,
+        "id_departamento": "08"
+      },
+      {
+        "id_municipio": 807,
+        "municipio": "SAN ANTONIO MASAHUAT",
+        "poblacion": 4258,
+        "id_departamento": "08"
+      },
+      {
+        "id_municipio": 808,
+        "municipio": "SAN EMIGDIO",
+        "poblacion": 2818,
+        "id_departamento": "08"
+      },
+      {
+        "id_municipio": 809,
+        "municipio": "SAN FRANCISCO CHINAMECA",
+        "poblacion": 7387,
+        "id_departamento": "08"
+      },
+      {
+        "id_municipio": 810,
+        "municipio": "SAN JUAN NONUALCO",
+        "poblacion": 17256,
+        "id_departamento": "08"
+      },
+      {
+        "id_municipio": 811,
+        "municipio": "SAN JUAN TALPA",
+        "poblacion": 7707,
+        "id_departamento": "08"
+      },
+      {
+        "id_municipio": 812,
+        "municipio": "SAN JUAN TEPEZONTES",
+        "poblacion": 3630,
+        "id_departamento": "08"
+      },
+      {
+        "id_municipio": 813,
+        "municipio": "SAN LUIS TALPA",
+        "poblacion": 21675,
+        "id_departamento": "08"
+      },
+      {
+        "id_municipio": 814,
+        "municipio": "SAN MIGUEL TEPEZONTES",
+        "poblacion": 5084,
+        "id_departamento": "08"
+      },
+      {
+        "id_municipio": 815,
+        "municipio": "SAN PEDRO MASAHUAT",
+        "poblacion": 25446,
+        "id_departamento": "08"
+      },
+      {
+        "id_municipio": 816,
+        "municipio": "SAN PEDRO NONUALCO",
+        "poblacion": 9252,
+        "id_departamento": "08"
+      },
+      {
+        "id_municipio": 817,
+        "municipio": "SAN RAFAEL OBRAJUELO",
+        "poblacion": 9820,
+        "id_departamento": "08"
+      },
+      {
+        "id_municipio": 818,
+        "municipio": "SANTA MARIA OSTUMA",
+        "poblacion": 5990,
+        "id_departamento": "08"
+      },
+      {
+        "id_municipio": 819,
+        "municipio": "SANTIAGO NONUALCO",
+        "poblacion": 39887,
+        "id_departamento": "08"
+      },
+      {
+        "id_municipio": 820,
+        "municipio": "TAPALHUACA",
+        "poblacion": 3909,
+        "id_departamento": "08"
+      },
+      {
+        "id_municipio": 821,
+        "municipio": "ZACATECOLUCA",
+        "poblacion": 65826,
+        "id_departamento": "08"
+      },
+      {
+        "id_municipio": 822,
+        "municipio": "SAN LUIS LA HERRADURA",
+        "poblacion": 20405,
+        "id_departamento": "08"
+      },
+      {
+        "id_municipio": 901,
+        "municipio": "CINQUERA",
+        "poblacion": 1467,
+        "id_departamento": "09"
+      },
+      {
+        "id_municipio": 902,
+        "municipio": "GUACOTECTI",
+        "poblacion": 5550,
+        "id_departamento": "09"
+      },
+      {
+        "id_municipio": 903,
+        "municipio": "ILOBASCO",
+        "poblacion": 61510,
+        "id_departamento": "09"
+      },
+      {
+        "id_municipio": 904,
+        "municipio": "JUTIAPA",
+        "poblacion": 6584,
+        "id_departamento": "09"
+      },
+      {
+        "id_municipio": 905,
+        "municipio": "SAN ISIDRO",
+        "poblacion": 7796,
+        "id_departamento": "09"
+      },
+      {
+        "id_municipio": 906,
+        "municipio": "SENSUNTEPEQUE",
+        "poblacion": 40332,
+        "id_departamento": "09"
+      },
+      {
+        "id_municipio": 907,
+        "municipio": "TEJUTEPEQUE",
+        "poblacion": 7114,
+        "id_departamento": "09"
+      },
+      {
+        "id_municipio": 908,
+        "municipio": "VICTORIA",
+        "poblacion": 12626,
+        "id_departamento": "09"
+      },
+      {
+        "id_municipio": 909,
+        "municipio": "VILLA DOLORES",
+        "poblacion": 6347,
+        "id_departamento": "09"
+      },
+      {
+        "id_municipio": 1001,
+        "municipio": "APASTEPEQUE",
+        "poblacion": 18342,
+        "id_departamento": "10"
+      },
+      {
+        "id_municipio": 1002,
+        "municipio": "GUADALUPE",
+        "poblacion": 5486,
+        "id_departamento": "10"
+      },
+      {
+        "id_municipio": 1003,
+        "municipio": "SAN CAYETANO ISTEPEQUE",
+        "poblacion": 5103,
+        "id_departamento": "10"
+      },
+      {
+        "id_municipio": 1004,
+        "municipio": "SANTA CLARA",
+        "poblacion": 5349,
+        "id_departamento": "10"
+      },
+      {
+        "id_municipio": 1005,
+        "municipio": "SANTO DOMINGO",
+        "poblacion": 6445,
+        "id_departamento": "10"
+      },
+      {
+        "id_municipio": 1006,
+        "municipio": "SAN ESTEBAN CATARINA",
+        "poblacion": 5661,
+        "id_departamento": "10"
+      },
+      {
+        "id_municipio": 1007,
+        "municipio": "SAN ILDEFONSO",
+        "poblacion": 7799,
+        "id_departamento": "10"
+      },
+      {
+        "id_municipio": 1008,
+        "municipio": "SAN LORENZO",
+        "poblacion": 6055,
+        "id_departamento": "10"
+      },
+      {
+        "id_municipio": 1009,
+        "municipio": "SAN SEBASTIAN",
+        "poblacion": 14411,
+        "id_departamento": "10"
+      },
+      {
+        "id_municipio": 1010,
+        "municipio": "SAN VICENTE",
+        "poblacion": 53213,
+        "id_departamento": "10"
+      },
+      {
+        "id_municipio": 1011,
+        "municipio": "TECOLUCA",
+        "poblacion": 23893,
+        "id_departamento": "10"
+      },
+      {
+        "id_municipio": 1012,
+        "municipio": "TEPETITAN",
+        "poblacion": 3631,
+        "id_departamento": "10"
+      },
+      {
+        "id_municipio": 1013,
+        "municipio": "VERAPAZ",
+        "poblacion": 6257,
+        "id_departamento": "10"
+      },
+      {
+        "id_municipio": 1101,
+        "municipio": "ALEGRIA",
+        "poblacion": 11712,
+        "id_departamento": "11"
+      },
+      {
+        "id_municipio": 1102,
+        "municipio": "BERLIN",
+        "poblacion": 17787,
+        "id_departamento": "11"
+      },
+      {
+        "id_municipio": 1103,
+        "municipio": "CALIFORNIA",
+        "poblacion": 2628,
+        "id_departamento": "11"
+      },
+      {
+        "id_municipio": 1104,
+        "municipio": "CONCEPCION BATRES",
+        "poblacion": 12197,
+        "id_departamento": "11"
+      },
+      {
+        "id_municipio": 1105,
+        "municipio": "EL TRIUNFO",
+        "poblacion": 6924,
+        "id_departamento": "11"
+      },
+      {
+        "id_municipio": 1106,
+        "municipio": "EREGUAYQUIN",
+        "poblacion": 6119,
+        "id_departamento": "11"
+      },
+      {
+        "id_municipio": 1107,
+        "municipio": "ESTANZUELAS",
+        "poblacion": 9015,
+        "id_departamento": "11"
+      },
+      {
+        "id_municipio": 1108,
+        "municipio": "JIQUILISCO",
+        "poblacion": 47784,
+        "id_departamento": "11"
+      },
+      {
+        "id_municipio": 1109,
+        "municipio": "JUCUAPA",
+        "poblacion": 18442,
+        "id_departamento": "11"
+      },
+      {
+        "id_municipio": 1110,
+        "municipio": "JUCUARAN",
+        "poblacion": 13424,
+        "id_departamento": "11"
+      },
+      {
+        "id_municipio": 1111,
+        "municipio": "MERCEDES UMAÑA",
+        "poblacion": 13092,
+        "id_departamento": "11"
+      },
+      {
+        "id_municipio": 1112,
+        "municipio": "NUEVA GRANADA",
+        "poblacion": 7451,
+        "id_departamento": "11"
+      },
+      {
+        "id_municipio": 1113,
+        "municipio": "OZATLAN",
+        "poblacion": 12443,
+        "id_departamento": "11"
+      },
+      {
+        "id_municipio": 1114,
+        "municipio": "PUERTO EL TRIUNFO",
+        "poblacion": 16548,
+        "id_departamento": "11"
+      },
+      {
+        "id_municipio": 1115,
+        "municipio": "SAN AGUSTIN",
+        "poblacion": 6158,
+        "id_departamento": "11"
+      },
+      {
+        "id_municipio": 1116,
+        "municipio": "SAN BUENAVENTURA",
+        "poblacion": 4726,
+        "id_departamento": "11"
+      },
+      {
+        "id_municipio": 1117,
+        "municipio": "SAN DIONISIO",
+        "poblacion": 4945,
+        "id_departamento": "11"
+      },
+      {
+        "id_municipio": 1118,
+        "municipio": "SANTA ELENA",
+        "poblacion": 17342,
+        "id_departamento": "11"
+      },
+      {
+        "id_municipio": 1119,
+        "municipio": "SAN FRANCISCO JAVIER",
+        "poblacion": 5409,
+        "id_departamento": "11"
+      },
+      {
+        "id_municipio": 1120,
+        "municipio": "SANTA MARIA",
+        "poblacion": 10731,
+        "id_departamento": "11"
+      },
+      {
+        "id_municipio": 1121,
+        "municipio": "SANTIAGO DE MARIA",
+        "poblacion": 18201,
+        "id_departamento": "11"
+      },
+      {
+        "id_municipio": 1122,
+        "municipio": "TECAPAN",
+        "poblacion": 7697,
+        "id_departamento": "11"
+      },
+      {
+        "id_municipio": 1123,
+        "municipio": "USULUTAN",
+        "poblacion": 73064,
+        "id_departamento": "11"
+      },
+      {
+        "id_municipio": 1201,
+        "municipio": "CAROLINA",
+        "poblacion": 2628,
+        "id_departamento": "12"
+      },
+      {
+        "id_municipio": 1202,
+        "municipio": "CIUDAD BARRIOS",
+        "poblacion": 24817,
+        "id_departamento": "12"
+      },
+      {
+        "id_municipio": 1203,
+        "municipio": "COMACARAN",
+        "poblacion": 3199,
+        "id_departamento": "12"
+      },
+      {
+        "id_municipio": 1204,
+        "municipio": "CHAPELTIQUE",
+        "poblacion": 10728,
+        "id_departamento": "12"
+      },
+      {
+        "id_municipio": 1205,
+        "municipio": "CHINAMECA",
+        "poblacion": 22311,
+        "id_departamento": "12"
+      },
+      {
+        "id_municipio": 1206,
+        "municipio": "CHIRILAGUA",
+        "poblacion": 19984,
+        "id_departamento": "12"
+      },
+      {
+        "id_municipio": 1207,
+        "municipio": "EL TRANSITO",
+        "poblacion": 18363,
+        "id_departamento": "12"
+      },
+      {
+        "id_municipio": 1208,
+        "municipio": "LOLOTIQUE",
+        "poblacion": 14916,
+        "id_departamento": "12"
+      },
+      {
+        "id_municipio": 1209,
+        "municipio": "MONCAGUA",
+        "poblacion": 22659,
+        "id_departamento": "12"
+      },
+      {
+        "id_municipio": 1210,
+        "municipio": "NUEVA GUADALUPE",
+        "poblacion": 8905,
+        "id_departamento": "12"
+      },
+      {
+        "id_municipio": 1211,
+        "municipio": "NUEVO EDEN DE SAN JUAN",
+        "poblacion": 4034,
+        "id_departamento": "12"
+      },
+      {
+        "id_municipio": 1212,
+        "municipio": "QUELEPA",
+        "poblacion": 4049,
+        "id_departamento": "12"
+      },
+      {
+        "id_municipio": 1213,
+        "municipio": "SAN ANTONIO DEL MOSCO",
+        "poblacion": 5304,
+        "id_departamento": "12"
+      },
+      {
+        "id_municipio": 1214,
+        "municipio": "SAN GERARDO",
+        "poblacion": 5986,
+        "id_departamento": "12"
+      },
+      {
+        "id_municipio": 1215,
+        "municipio": "SAN JORGE",
+        "poblacion": 9115,
+        "id_departamento": "12"
+      },
+      {
+        "id_municipio": 1216,
+        "municipio": "SAN LUIS DE LA REINA",
+        "poblacion": 5637,
+        "id_departamento": "12"
+      },
+      {
+        "id_municipio": 1217,
+        "municipio": "SAN MIGUEL",
+        "poblacion": 218410,
+        "id_departamento": "12"
+      },
+      {
+        "id_municipio": 1218,
+        "municipio": "SAN RAFAEL ORIENTE",
+        "poblacion": 13290,
+        "id_departamento": "12"
+      },
+      {
+        "id_municipio": 1219,
+        "municipio": "SESORI",
+        "poblacion": 10705,
+        "id_departamento": "12"
+      },
+      {
+        "id_municipio": 1220,
+        "municipio": "ULUAZAPA",
+        "poblacion": 3351,
+        "id_departamento": "12"
+      },
+      {
+        "id_municipio": 1301,
+        "municipio": "ARAMBALA",
+        "poblacion": 1821,
+        "id_departamento": "13"
+      },
+      {
+        "id_municipio": 1302,
+        "municipio": "CACAOPERA",
+        "poblacion": 10943,
+        "id_departamento": "13"
+      },
+      {
+        "id_municipio": 1303,
+        "municipio": "CORINTO",
+        "poblacion": 15410,
+        "id_departamento": "13"
+      },
+      {
+        "id_municipio": 1304,
+        "municipio": "CHILANGA",
+        "poblacion": 9700,
+        "id_departamento": "13"
+      },
+      {
+        "id_municipio": 1305,
+        "municipio": "DELICIAS DE CONCEPCION",
+        "poblacion": 5076,
+        "id_departamento": "13"
+      },
+      {
+        "id_municipio": 1306,
+        "municipio": "EL DIVISADERO",
+        "poblacion": 7617,
+        "id_departamento": "13"
+      },
+      {
+        "id_municipio": 1307,
+        "municipio": "EL ROSARIO",
+        "poblacion": 1339,
+        "id_departamento": "13"
+      },
+      {
+        "id_municipio": 1308,
+        "municipio": "GUALOCOCTI",
+        "poblacion": 3650,
+        "id_departamento": "13"
+      },
+      {
+        "id_municipio": 1309,
+        "municipio": "GUATAJIAGUA",
+        "poblacion": 11721,
+        "id_departamento": "13"
+      },
+      {
+        "id_municipio": 1310,
+        "municipio": "JOATECA",
+        "poblacion": 4210,
+        "id_departamento": "13"
+      },
+      {
+        "id_municipio": 1311,
+        "municipio": "JOCOAITIQUE",
+        "poblacion": 2877,
+        "id_departamento": "13"
+      },
+      {
+        "id_municipio": 1312,
+        "municipio": "JOCORO",
+        "poblacion": 10060,
+        "id_departamento": "13"
+      },
+      {
+        "id_municipio": 1313,
+        "municipio": "LOLOTIQUILLO",
+        "poblacion": 4915,
+        "id_departamento": "13"
+      },
+      {
+        "id_municipio": 1314,
+        "municipio": "MEANGUERA",
+        "poblacion": 7818,
+        "id_departamento": "13"
+      },
+      {
+        "id_municipio": 1315,
+        "municipio": "OSICALA",
+        "poblacion": 8909,
+        "id_departamento": "13"
+      },
+      {
+        "id_municipio": 1316,
+        "municipio": "PERQUIN",
+        "poblacion": 3158,
+        "id_departamento": "13"
+      },
+      {
+        "id_municipio": 1317,
+        "municipio": "SAN CARLOS",
+        "poblacion": 4172,
+        "id_departamento": "13"
+      },
+      {
+        "id_municipio": 1318,
+        "municipio": "SAN FERNANDO",
+        "poblacion": 1708,
+        "id_departamento": "13"
+      },
+      {
+        "id_municipio": 1319,
+        "municipio": "SAN FRANCISCO GOTERA",
+        "poblacion": 21049,
+        "id_departamento": "13"
+      },
+      {
+        "id_municipio": 1320,
+        "municipio": "SAN ISIDRO",
+        "poblacion": 2804,
+        "id_departamento": "13"
+      },
+      {
+        "id_municipio": 1321,
+        "municipio": "SAN SIMON",
+        "poblacion": 10102,
+        "id_departamento": "13"
+      },
+      {
+        "id_municipio": 1322,
+        "municipio": "SENSEMBRA",
+        "poblacion": 2940,
+        "id_departamento": "13"
+      },
+      {
+        "id_municipio": 1323,
+        "municipio": "SOCIEDAD",
+        "poblacion": 11406,
+        "id_departamento": "13"
+      },
+      {
+        "id_municipio": 1324,
+        "municipio": "TOROLA",
+        "poblacion": 3042,
+        "id_departamento": "13"
+      },
+      {
+        "id_municipio": 1325,
+        "municipio": "YAMABAL",
+        "poblacion": 4346,
+        "id_departamento": "13"
+      },
+      {
+        "id_municipio": 1326,
+        "municipio": "YOLOAIQUIN",
+        "poblacion": 3613,
+        "id_departamento": "13"
+      },
+      {
+        "id_municipio": 1401,
+        "municipio": "ANAMOROS",
+        "poblacion": 14551,
+        "id_departamento": "14"
+      },
+      {
+        "id_municipio": 1402,
+        "municipio": "BOLIVAR",
+        "poblacion": 4215,
+        "id_departamento": "14"
+      },
+      {
+        "id_municipio": 1403,
+        "municipio": "CONCEPCION DE ORIENTE",
+        "poblacion": 8179,
+        "id_departamento": "14"
+      },
+      {
+        "id_municipio": 1404,
+        "municipio": "CONCHAGUA",
+        "poblacion": 37362,
+        "id_departamento": "14"
+      },
+      {
+        "id_municipio": 1405,
+        "municipio": "EL CARMEN",
+        "poblacion": 12324,
+        "id_departamento": "14"
+      },
+      {
+        "id_municipio": 1406,
+        "municipio": "EL SAUCE",
+        "poblacion": 6546,
+        "id_departamento": "14"
+      },
+      {
+        "id_municipio": 1407,
+        "municipio": "INTIPUCA",
+        "poblacion": 7567,
+        "id_departamento": "14"
+      },
+      {
+        "id_municipio": 1408,
+        "municipio": "LA UNION",
+        "poblacion": 34045,
+        "id_departamento": "14"
+      },
+      {
+        "id_municipio": 1409,
+        "municipio": "LISLIQUE",
+        "poblacion": 13385,
+        "id_departamento": "14"
+      },
+      {
+        "id_municipio": 1410,
+        "municipio": "MEANGUERA DEL GOLFO",
+        "poblacion": 2398,
+        "id_departamento": "14"
+      },
+      {
+        "id_municipio": 1411,
+        "municipio": "NUEVA ESPARTA",
+        "poblacion": 9637,
+        "id_departamento": "14"
+      },
+      {
+        "id_municipio": 1412,
+        "municipio": "PASAQUINA",
+        "poblacion": 16375,
+        "id_departamento": "14"
+      },
+      {
+        "id_municipio": 1413,
+        "municipio": "POLOROS",
+        "poblacion": 9701,
+        "id_departamento": "14"
+      },
+      {
+        "id_municipio": 1414,
+        "municipio": "SAN ALEJO",
+        "poblacion": 17598,
+        "id_departamento": "14"
+      },
+      {
+        "id_municipio": 1415,
+        "municipio": "SAN JOSE LAS FUENTES",
+        "poblacion": 2971,
+        "id_departamento": "14"
+      },
+      {
+        "id_municipio": 1416,
+        "municipio": "SANTA ROSA DE LIMA",
+        "poblacion": 27693,
+        "id_departamento": "14"
+      },
+      {
+        "id_municipio": 1417,
+        "municipio": "YAYANTIQUE",
+        "poblacion": 6871,
+        "id_departamento": "14"
+      },
+      {
+        "id_municipio": 1418,
+        "municipio": "YUCUAIQUIN",
+        "poblacion": 6799,
+        "id_departamento": "14"
+      }
+    ]
+  }
+};
+result = "";
+       result += "$.edictusDatabase.municipio[*]['id_municipio','municipio']" + '<br />';
+       result += jsonPath(json, "$.edictusDatabase.municipio[*]['id_municipio','municipio']").toJSONString() + "<br />";
+       result += '<br><br>'+"$..municipio[?(@.poblacion>50000)].municipio" + '<br />';
+       result += jsonPath(json, "$..municipio[?(@.poblacion>50000)].municipio").toJSONString() + "<br />";
+       result += '<br><br>'+"$..municipio[(@.length-1)]" + '<br />';
+       result += jsonPath(json, "$..municipio[(@.length-1)]").toJSONString() + "<br />";
+       result += '<br><br>'+"$..municipio[?(@.id_departamento=='06')]['municipio','poblacion']" + '<br />';
+       result += jsonPath(json, "$..municipio[?(@.id_departamento=='06')].municipio").toJSONString() + "<br />";
+       result += '<br><br>'+"$.edictusDatabase..poblacion" + '<br />';
+       result += jsonPath(json, "$.edictusDatabase..poblacion").toJSONString() + "<br />";
+       result += '<br><br>'+"$..[?(@.match(/^SAN/))].municipio" + '<br />';
+       //result += jsonPath(json, "$..[?(@.match(/^SAN/))].municipio").toJSONString() + "<br />";
+
+/*       result += jsonPath(json, "$..departamento").toJSONString() + "<br />";
+       result += jsonPath(json, "$.edictusDatabase.*").toJSONString() + "<br />";
+       result += jsonPath(json, "$.edictusDatabase..poblacion").toJSONString() + "<br />";
+       result += jsonPath(json, "$..municipio[(@.length-1)]").toJSONString() + "<br />";
+       result += jsonPath(json, "$..municipio[-1:]").toJSONString() + "<br />";
+       result += jsonPath(json, "$..municipio[0,3]").toJSONString() + "<br />";     
+       result += jsonPath(json, "$..municipio[?(@.id_departamento)]").toJSONString() + "<br />";
+       result += jsonPath(json, "$..*").toJSONString() + "\n"; */
+       document.write(result);
+</script>
+</body>
+</html>
