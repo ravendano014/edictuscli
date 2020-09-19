@@ -1600,7 +1600,7 @@ result = "";
        result += '<br><br>'+"$..municipio[(@.length-1)]" + '<br />';
        result += jsonPath(json, "$..municipio[(@.length-1)]").toJSONString() + "<br />";
        result += '<br><br>'+"$..municipio[?(@.id_departamento=='06')]['municipio','poblacion']" + '<br />';
-       result += jsonPath(json, "$..municipio[?(@.id_departamento=='06')].municipio").toJSONString() + "<br />";
+       result += jsonPath(json, "$..municipio[?(@.id_departamento=='06')]['municipio','poblacion']").toJSONString() + "<br />";
        result += '<br><br>'+"$.edictusDatabase..poblacion" + '<br />';
        result += jsonPath(json, "$.edictusDatabase..poblacion").toJSONString() + "<br />";
        result += '<br><br>'+"$..[?(@.match(/^SAN/))].municipio" + '<br />';
