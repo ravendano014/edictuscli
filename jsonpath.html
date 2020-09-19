@@ -13,6 +13,7 @@
   <li>Last item - "$..municipio[(@.length-1)]"</li>
   <li>Only municipio, poblacion of departamento 06 - "$..municipio[?(@.id_departamento=='06')]['municipio','poblacion']"</li>
   <li>Only poblacion - "$.edictusDatabase..poblacion"</li>
+  <li>Only Element 22 and 109 - "$..municipio[21,109]"</li>
 </ul>
 <script type="text/javascript">
 var json = { "edictusDatabase": {
@@ -1601,9 +1602,8 @@ result = "";
        result += jsonPath(json, "$..municipio[(@.length-1)]").toJSONString() + "<br />";
        result += '<br><br>'+"$..municipio[?(@.id_departamento=='06')]['municipio','poblacion']" + '<br />';
        result += jsonPath(json, "$..municipio[?(@.id_departamento=='06')]['municipio','poblacion']").toJSONString() + "<br />";
-       result += '<br><br>'+"$.edictusDatabase..poblacion" + '<br />';
-       result += jsonPath(json, "$.edictusDatabase..poblacion").toJSONString() + "<br />";
-       result += '<br><br>'+"$..[?(@.match(/^SAN/))].municipio" + '<br />';
+       result += '<br><br>'+"$..municipio[21,109]" + '<br />';
+       result += jsonPath(json, "$..municipio[21,109]").toJSONString() + "<br />"; 
        //result += jsonPath(json, "$..[?(@.match(/^SAN/))].municipio").toJSONString() + "<br />";
 
 /*       result += jsonPath(json, "$..departamento").toJSONString() + "<br />";
