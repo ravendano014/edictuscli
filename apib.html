@@ -1,0 +1,119 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+      // webOutput = [{"Mes":2,"Edictos":368},{"Mes":3,"Edictos":327},{"Mes":6,"Edictos":20}];
+
+    let endpoint = 'https://edictus.herokuapp.com/edictos/montly/2020'
+    let apiKey = ''
+
+    let webOutput = [];
+    jsonData =  [['Mes', 'Edictos'] ];
+
+   async function drawBarChart() {
+    
+        var jsonData2 = await $.ajax({
+                        url: endpoint + "?key=" + apiKey + " &q=" + $( this ).text(),
+                        contentType: "application/json",
+                        dataType: 'json',
+                        success: function(result){
+                        webOutput = result;
+                        //console.log(webOutput);
+                        webOutput.map(geta2);
+                        var data = new google.visualization.arrayToDataTable(jsonData);
+
+                        var options = {
+                        width: 400,
+                        legend: { position: 'none' },
+                        chart: {
+                            title: 'Edictos Judiciales',
+                            subtitle: 'Ingreso Mensual' },
+                        axes: {
+                            x: {
+                            0: { side: 'top', label: '2020'} // Top x-axis.
+                            }
+                        },
+                        bar: { groupWidth: "90%" }
+                        };
+
+                        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+                        // Convert the Classic options to Material options.
+                        chart.draw(data, google.charts.Bar.convertOptions(options));
+
+            }
+        }).responseText;
+          
+    }
+    
+    
+      function monthname(month){
+        switch (month) {
+            case 1:
+                return "Enero";
+                break;
+            case 2:
+                return "Febrero";
+                break;
+            case 3:
+                return "Marzo";
+                break;
+            case 4:
+                return "Abril";
+                break;
+            case 5:
+                return "Mayo";
+                break;
+            case 6:
+                return "Junio";
+                break;
+            case 7:
+                return "Julio";
+                break;
+            case 8:
+                return "Agosto";
+                break;
+            case 9:
+                return "Septiembre";
+                break;
+            case 10:
+                return "Octubre";
+                break;
+            case 11:
+                return "Noviembre";
+                break;
+            case 12:
+                return "Diciembre";
+                break;
+
+            default:
+            return "";
+                break;
+        }
+      }
+
+     
+      function geta2(item) {
+        var mes = monthname(item.Mes);
+        var edictos = item.Edictos;
+
+        formatted = [mes, edictos];
+        jsonData.push(formatted);
+        return formatted;
+      }
+
+      
+
+      function drawStuff() {
+        drawBarChart()
+      };
+
+    </script>
+  </head>
+  <body>
+    <div id="top_x_div" style="width: 400px; height: 300px;"></div>
+  </body>
+</html>
