@@ -1,8 +1,11 @@
 # API Edictus Clients
+
 * JQuery
 * Axios
 * Fetch 
 * react-app git repo: https://github.com/ravendano014/react-edictus 
+
+https://ronaldavendano.editorx.io/edictus
 
 # Scenario
 ![Edictus API](./Edictus_API.png)
