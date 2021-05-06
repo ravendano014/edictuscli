@@ -7,6 +7,8 @@
 
 https://ronaldavendano.editorx.io/edictus
 
+https://ravendano014.github.io/edictuscli/
+
 # Scenario
 ![Edictus API](./Edictus_API.png)
 
